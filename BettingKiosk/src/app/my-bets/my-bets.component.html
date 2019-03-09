@@ -1,0 +1,29 @@
+
+<mat-table class="bets-table mat-elevation-z8" [dataSource]="dataSource">
+    <ng-container matColumnDef="img">
+        <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+        <mat-cell *matCellDef="let bet"><img alt="Smiley face" src="../../assets/racehorse.jpg"/></mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+        <mat-cell *matCellDef="let bet">{{bet.amount}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="horse">
+        <mat-header-cell *matHeaderCellDef>Horse</mat-header-cell>
+        <mat-cell class="description-cell"
+                    *matCellDef="let bet">{{bet.horse}}</mat-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="race">
+        <mat-header-cell *matHeaderCellDef>Race</mat-header-cell>
+        <mat-cell class="duration-cell"
+                    *matCellDef="let bet">{{bet.race}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+    

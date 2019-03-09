@@ -1,3 +1,72 @@
-.div-card {
-    background-image: url("../../assets/horseRace_3.jpg")
+.category {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: Roboto; 
+}
+
+.dashboards {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    background-color: #f3f3f3;  
+}
+
+.card {
+    position: relative;
+    height: 150px;
+    width: 48%;
+    border: 1px solid #bdbdbd;
+    background-color: #fff;
+    margin: 10px;
+    margin-bottom: 28px;
+    border-radius: 10px 10px 0px 0px;      
+}
+
+.card :hover {
+    -webkit-box-shadow: 10px 0 10px -4px #d50000;
+    box-shadow: 10px 0 10px -4px #d50000;
+}
+
+.action-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center !important;
+    padding: 0px 0px 25px 13px;
+    height: 100%;
+    max-height: 93%;    
+}
+
+.description {
+    font-family: Roboto;
+    font-size: 16px;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+}
+
+.img
+    {
+        height: 7em;
+        border-radius: 10px;
+        margin-bottom: 3%;
+    }
+    
+.name {
+    font-family: Roboto;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.date-time {
+    font-weight: 700;
+    font-style: italic;
 }

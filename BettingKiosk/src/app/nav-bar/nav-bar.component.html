@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="nav-margin cursor-element"><h3 >WELCOME {{username}}</h3></div>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <span class=" nav-margin cursor-element"  routerLink="dashboard">Dashboard</span>
+        <span routerLink="mybets" routerLinkActive="active" class="nav-margin cursor-element">My Bets</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
