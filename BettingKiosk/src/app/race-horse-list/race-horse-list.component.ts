@@ -31,6 +31,7 @@ export class RaceHorseListComponent implements OnInit {
       horseData.forEach((horse) => {
         if (_.find(horses, Participanthorse => horse['Name'].toLowerCase() === Participanthorse.toLowerCase())) {
           console.log(horse);
+          horse['jockeyName'] = race.Participants[horse['Name'].toLowerCase()];
           this.horseData.push(horse);
         }
       });

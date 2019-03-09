@@ -6,12 +6,12 @@
     <img src="assets/images/horse1.jpg" class="horse-image">
   </div>
   <div fxFlex="25%" fxLayout="column" fxLayoutGap="5%">
-    <span class="largeText">{{horse.name | titlecase}}</span>
+    <span class="largeText">{{horse.Name | titlecase}}</span>
     <span class="midText">{{horse.jockeyName | titlecase}}</span>
   </div>
   <div fxFlex="25%" fxLayout="column" fxLayoutGap="5%">
-    <span> Races Won: <b>{{horse.raceWon}}</b></span>
-    <span> Odds: <b>{{horse.odds}}</b></span>
+    <span> Races Won: <b>{{horse.Wins}}</b></span>
+    <span> Odds: <b>{{horse.Losses}}</b></span>
   </div>
   <div fxFlex="10%" fxLayoutAlign="center" fxLayout="column">
     <mat-form-field style="width:100%">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseConnectionsService } from '../services/firebase-connections.service';
+import {UserDetailsService} from '../user-details.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   public username;
-  constructor(private firebaseService: FirebaseConnectionsService, private router: Router) { }
+  constructor(private firebaseService: FirebaseConnectionsService, private router: Router, private userService: UserDetailsService) { }
 
   ngOnInit() {
+    console.log(this.userService.user);
       this.username = 'Sameeksha';
   }
   logoutUser() {
