@@ -3,6 +3,7 @@ import { FirebaseConnectionsService } from '../services/firebase-connections.ser
 import { OnInit } from '@angular/core';
 import * as uuid from 'uuid';
 import * as environmentVariable from '../../environments/environment';
+import { Router} from '@angular/router';
 
 @Component({
 selector: 'app-qrcode',
@@ -18,7 +19,7 @@ kioskRef: any;
 Generate: any;
 inter = null;
 kioskId = environmentVariable.environment.KioskId;
-constructor(private firebaseService: FirebaseConnectionsService) {
+constructor(private firebaseService: FirebaseConnectionsService, private router: Router) {
 
 }
 ngOnInit() {
@@ -34,6 +35,8 @@ ngOnInit() {
             this.qr = false;
             this.stopInter();
             console.log('user logged in');
+            this.router.navigate(['./nav']);
+            this.firebaseService.getLoggedInUserDetails(data.user);
         }
     });
 }

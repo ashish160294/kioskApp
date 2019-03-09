@@ -4,9 +4,9 @@ import { DatabaseReference } from '@angular/fire/database/interfaces';
 import * as _ from 'lodash';
 import { map } from 'rxjs/operators';
 import * as environmentVariable from '../../environments/environment';
-import { AngularFirestore} from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
-
+import { UserDetailsService } from '../user-details.service';
+import { Router} from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +14,7 @@ export class FirebaseConnectionsService implements OnInit  {
   usersRef: any;
   kioskDetails: any;
   dbRef: DatabaseReference;
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase, private userService: UserDetailsService, private router: Router) {
     firebase.initializeApp(environmentVariable.environment.firebase);
     this.dbRef = firebase.database().ref();
   }
@@ -27,6 +27,22 @@ export class FirebaseConnectionsService implements OnInit  {
     // const obj = this.AFC.key;
     // console.log(obj);
     // ob
+  }
+
+  getLoggedInUserDetails(userEmail) {
+    const user = this.db.object(`users/${userEmail}`).valueChanges();
+    user.subscribe((userData) => {
+      console.log(userData);
+      this.userService.updateLoggedInUser(userData);
+    });
+  }
+  logoutUser() {
+    this.userService.updateLoggedInUser(null);
+    this.dbRef.child("kiosks").child(environmentVariable.environment.KioskId).child("user").set('none');
+    this.dbRef.child("kiosks").child(environmentVariable.environment.KioskId).child("isloggedin").set(false).then(() => {
+      this.router.navigate(['']);
+    });
+    // this.dbRef.child("kiosks").child()
   }
   getQRCode() {
     this.usersRef = this.db.list('kiosks').valueChanges();

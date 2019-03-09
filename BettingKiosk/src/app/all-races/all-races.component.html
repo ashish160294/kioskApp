@@ -1,21 +1,21 @@
-<div class = "container">
-    <div class = "div-card" (click) = "cardClicked()">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>{{title}}</mat-card-title>
-                </mat-card-header>
-                <div>
-                    <div fxFlex ="20%">
-                        <img mat-card-image src = "../../assets/horseRace_3.jpg">
-                    </div>
-                    <div>
-                        <mat-card-content>
-                            <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.<br>
-                            </p>
-                        </mat-card-content>
+<div class="category">
+    <div class="dashboards">
+        <div class="card" *ngFor="let race of races">
+            <div class="name">
+                <span class="card-title">{{title}}</span>
+            </div>
+            <div (click) = "cardClicked()" class="content" fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start">
+                <div fxFlex="30%">
+                    <img class="img" src="../../assets/horseRace_3.jpg"/>
+                </div>
+                <div fxFlex="70%">
+                    <div class="description">Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.<br>
+                        <div class = "date-time">
+                            Start Date: {{date}} and Time: {{time}}
+                        </div>  
                     </div>
                 </div>
-        
-            </mat-card>
+            </div>
         </div>
+    </div>
 </div>
