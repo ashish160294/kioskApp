@@ -1,0 +1,30 @@
+[
+{
+ "betId": "value00",
+ "img": "value1",
+ "amount": "value2",
+ "horse": "value3",
+ "race": "value4"
+},
+{
+ "betId": "value01",
+ "img": "value11",
+ "amount": "value22",
+ "horse": "value33",
+ "race": "value44"
+},
+{
+ "betId": "value02",
+ "img": "value111",
+ "amount": "value222",
+ "horse": "value333",
+ "race": "value444"
+},
+{
+ "betId": "value03",
+ "img": "value1111",
+ "amount": "value2222",
+ "horse": "value3333",
+ "race": "value4444"
+}
+]
