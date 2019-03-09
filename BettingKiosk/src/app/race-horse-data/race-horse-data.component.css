@@ -1,0 +1,25 @@
+.horse-card {
+    height:"20px";
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.horse-image{
+    height:100px;
+    width:250px
+}
+
+.largeText{
+    font-size:26px;
+    font-style: italic;
+}
+
+.midText{
+    font-size:20px;
+    font-style: normal;
+}
+
+.indexText{
+    font-size:40px; 
+}

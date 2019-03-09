@@ -4,6 +4,7 @@ import { QRCodeComponent } from './qrcode/qrcode.component';
 import { AllRaceComponent } from './all-races/all-races.component';
 import { NavbarComponent } from './nav-bar/nav-bar.component';
 import { MyBetsComponent } from './my-bets/my-bets.components';
+import { RaceHorseListComponent } from './race-horse-list/race-horse-list.component';
 
 const routes: Routes = [
   { path: 'qrcode', component: QRCodeComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
     [
       {path: '', redirectTo: 'nav/dashboard', pathMatch: 'full'},
       {path: 'dashboard', component: AllRaceComponent},
-      {path: 'mybets', component: MyBetsComponent}
+      {path: 'mybets', component: MyBetsComponent},
+      { path: 'horserace/:id', component: RaceHorseListComponent }
     ]
   }
 ];

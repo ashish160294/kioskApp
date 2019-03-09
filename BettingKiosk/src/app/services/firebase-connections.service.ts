@@ -14,6 +14,7 @@ export class FirebaseConnectionsService implements OnInit  {
   usersRef: any;
   kioskDetails: any;
   dbRef: DatabaseReference;
+  racesData: any;
   constructor(private db: AngularFireDatabase, private userService: UserDetailsService, private router: Router) {
     firebase.initializeApp(environmentVariable.environment.firebase);
     this.dbRef = firebase.database().ref();
@@ -38,8 +39,8 @@ export class FirebaseConnectionsService implements OnInit  {
   }
   logoutUser() {
     this.userService.updateLoggedInUser(null);
-    this.dbRef.child("kiosks").child(environmentVariable.environment.KioskId).child("user").set('none');
-    this.dbRef.child("kiosks").child(environmentVariable.environment.KioskId).child("isloggedin").set(false).then(() => {
+    this.dbRef.child('kiosks').child(environmentVariable.environment.KioskId.toString()).child('user').set('none');
+    this.dbRef.child('kiosks').child(environmentVariable.environment.KioskId.toString()).child('isloggedin').set(false).then(() => {
       this.router.navigate(['']);
     });
     // this.dbRef.child("kiosks").child()
@@ -55,5 +56,21 @@ export class FirebaseConnectionsService implements OnInit  {
       });
       return this.kioskDetails;
     }));
+  }
+
+  getRacesList() {
+    const racesRef = this.db.list('Races').valueChanges();
+    return racesRef.pipe(map((data) => {
+      this.racesData = data;
+      return this.racesData;
+    })
+  );
+  }
+  fetchHorses() {
+    const horsesRef = this.db.list('Horses').valueChanges();
+    return horsesRef.pipe(map((data) => {
+      return data;
+    })
+  );
   }
 }

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FirebaseConnectionsService } from '../services/firebase-connections.service';
 
 @Component({
 selector: 'app-races',
@@ -7,20 +8,30 @@ templateUrl: './all-races.component.html',
 styleUrls: ['./all-races.component.css']
 })
 
-export class AllRaceComponent {
+export class AllRaceComponent implements OnInit {
     @Input() title: string;
     public date;
     public time;
     public races = [];
-    constructor(private router: Router) {
-        this.title = "Champions Derby";
-        this.date = new Date();
-        this.time = new Date().getHours();
-        this.races = ['1', '2', '3', '4'];
+    constructor(private router: Router, private firebaseConnectionService: FirebaseConnectionsService) {
+
+    }
+    ngOnInit() {
+        this.firebaseConnectionService.getRacesList().subscribe((data) => {
+            data.forEach(element => {
+                const race = {
+                    title: element.Name,
+                    date: element.Date,
+                    time: element.Time,
+                    id: element.Id,
+                    description: element.Description
+                };
+                this.races.push(race);
+            });
+        });
     }
 
-    public cardClicked() {
-        this.router.navigate(['/qrcode'])
+    public cardClicked(race) {
+        this.router.navigate([`nav/horserace/${race.id}`]);
     }
-    
 }
