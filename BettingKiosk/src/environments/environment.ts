@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  KioskId: 1,
+  KioskId: 2,
   firebase: {
     apiKey: 'AIzaSyBELNEEn64fxrs9d2CMFWril0SAy3fmBL4',
     authDomain: 'ghode-44b33.firebaseapp.com',
