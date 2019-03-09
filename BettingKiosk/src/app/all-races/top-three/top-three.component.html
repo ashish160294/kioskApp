@@ -1,0 +1,21 @@
+<div class="category">
+        <div class="top">
+            <h4>Top 3 Race Horses </h4><span><i class="fas fa-chevron-right"></i> <i class="fas fa-chevron-right"></i> <i class="fas fa-chevron-right"></i></span>
+            <div class="card" *ngFor="let horse of horses">
+                <div class="title">
+                    <span class="card-title">{{horse.title}}</span>
+                </div>
+                <div class="content" fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start">
+                    <div fxFlex="50%">
+                        <img class="img" src="../../assets/racehorse.jpg"/>
+                    </div>
+                    <div fxFlex="50%">
+                        <div class="win_by_loss">Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.<br>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

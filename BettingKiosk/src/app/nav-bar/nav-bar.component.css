@@ -6,3 +6,8 @@
 .cursor-element {
     cursor: pointer;
  }
+.nav {
+    background-color: black;
+    color: white;
+    border-radius: 9px;
+}
