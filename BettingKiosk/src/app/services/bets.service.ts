@@ -11,9 +11,9 @@ export class MyBetsService {
 
     findLessons(
         betId:number, filter = '', sortOrder = 'asc',
-        pageNumber = 0, pageSize = 3):  Observable<any> {
+        pageNumber = 0, pageSize = 3):  Observable<any[]> {
 
-        return this.http.get('', {
+        return this.http.get('../../assets/data.json', {
             params: new HttpParams()
                 .set('betId', betId.toString())
                 .set('filter', filter)

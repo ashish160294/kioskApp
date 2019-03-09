@@ -13,6 +13,7 @@ import { AllRaceComponent } from './all-races/all-races.component';
 import { NavbarComponent } from './nav-bar/nav-bar.component';
 import { MyBetsComponent } from './my-bets/my-bets.components';
 import { MyBetsService } from './services/bets.service';
+import { TopThreeHorsesComponent } from './all-races/top-three/top-three.component';
 
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
@@ -34,7 +35,8 @@ import {MatButtonModule, MatCheckboxModule, MatCardTitle, MatCard, MatCardHeader
     NavbarComponent,
     MatToolbar,
     MatToolbarRow,
-    MyBetsComponent
+    MyBetsComponent,
+    TopThreeHorsesComponent
   ],
   imports: [
     BrowserModule,
